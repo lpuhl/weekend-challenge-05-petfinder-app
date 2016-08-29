@@ -1,0 +1,24 @@
+<!-- Select Pet Type dropdown -->
+<p>Selected Pet Type: {{selectedPetType}}</p>
+<select ng-model="selectedPetType" ng-change="getRandomPet(selectedPetType)">
+  <option value="" style="display:none">Choose which kind of pet you’d like</option>
+  <option ng-repeat="petType in petTypes" value="{{petType}}">{{petType}} </option>
+</select>
+
+<!-- View faves button -->
+  <button onclick="location.href='#faves'">View Favorites</button>
+
+<!-- Random Pet display -->
+<div class="container">
+  <div class="col-md-6">
+    <h2 ng-model="pet">{{pet.name.$t}}</h2>
+    <p ng-model="pet">{{pet.description.$t}}</p>
+    <p ng-show="" ng-model="pet">{{pet.id.$t}}</p>
+
+    <img ng-model="pet" ng-src="{{pet.media.photos.photo[2].$t}}" />
+  </div>
+</div>
+
+<!-- Add to Favorites button  - appears when a pet type is selected-->
+
+<button ng-show="selectedPetType" ng-click="addFavorite()" class="addFavorite">Add to Favorites</button>
