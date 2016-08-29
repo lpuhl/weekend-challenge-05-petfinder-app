@@ -1,0 +1,31 @@
+.favethumbnail {
+  width: 100px;
+  height: auto;
+}
+
+table, button, select, p {
+  margin: 15px;
+}
+
+td, th {
+  padding: 1em;
+}
+
+
+.pageHeader {
+  padding: 30px;
+  margin: 15px;
+}
+
+.petCount {
+  border-color: gray;
+  border-width: : 1px;
+  padding: 10px;
+}
+.home {
+  float:left;
+}
+
+.petCount {
+  float: right
+}

@@ -1,5 +1,10 @@
+<div class="pageHeader">
+  <span ng-controller="favesController" class="petCount">Favorites Count: {{petCount}}</span>
+</div>
+
+
 <!-- Select Pet Type dropdown -->
-<p>Selected Pet Type: {{selectedPetType}}</p>
+<!-- <p>Selected Pet Type: {{selectedPetType}}</p> -->
 <select ng-model="selectedPetType" ng-change="getRandomPet(selectedPetType)">
   <option value="" style="display:none">Choose which kind of pet you’d like</option>
   <option ng-repeat="petType in petTypes" value="{{petType}}">{{petType}} </option>
@@ -10,12 +15,12 @@
 
 <!-- Random Pet display -->
 <div class="container">
-  <div class="col-md-6">
+  <div class="featuredPet">
+    <img ng-model="pet" ng-src="{{pet.media.photos.photo[2].$t}}" />
     <h2 ng-model="pet">{{pet.name.$t}}</h2>
     <p ng-model="pet">{{pet.description.$t}}</p>
     <p ng-show="" ng-model="pet">{{pet.id.$t}}</p>
 
-    <img ng-model="pet" ng-src="{{pet.media.photos.photo[2].$t}}" />
   </div>
 </div>
 

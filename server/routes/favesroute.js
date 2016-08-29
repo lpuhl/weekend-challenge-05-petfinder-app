@@ -27,29 +27,32 @@ router.post('/', function(req, res) {
       });
   });
 });
-//
-// router.get('/', function(req, res) {
-//   pg.connect(connectionString, function(err, client, done) {
-//     if(err) {
-//       console.log(err);
-//       res.sendStatus(500);
-//     }
-//
-//     client.query("SELECT * FROM pets ORDER BY completed_date DESC",
-//       function(err, result) {
-//         done();
-//
-//         if(err) {
-//           console.log("select error: ", err);
-//           res.sendStatus(500);
-//         }
-//         // console.log('results: ', resultStuff);
-//
-//         res.send(result.rows);
-//     });
-//
-//   });
-// });
+
+router.get('/', function(req, res) {
+  pg.connect(connectionString, function(err, client, done) {
+    if(err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+
+    client.query("SELECT * FROM pets",
+      function(err, result) {
+        done();
+
+        if(err) {
+          console.log("select error: ", err);
+          res.sendStatus(500);
+        }
+        // console.log('results: ', resultStuff);
+
+        res.send(result.rows);
+    });
+
+  });
+});
+
+module.exports = router;
+
 //
 // router.put('/:id', function(req, res) {
 //   var petID = req.params.id;
@@ -99,5 +102,3 @@ router.post('/', function(req, res) {
 //   });
 //
 // });
-
-module.exports = router;

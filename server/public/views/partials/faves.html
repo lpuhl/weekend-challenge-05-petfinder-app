@@ -1,2 +1,20 @@
-<div class="favesContainer">
+<div class="pageHeader">
+  <button class="home" onclick="location.href='#home'">Home</button>
+  <p class="petCount">Favorites Count: {{petCount}}</p>
 </div>
+
+<table>
+  <tr>
+    <th>Petfinder ID</th>
+    <th>Photo</th>
+    <th>Pet Name and Description</th>
+  </tr>
+
+<tr id="petRow" ng-repeat="pet in pets">
+  <td>{{pet.petfinder_id}}</td>
+  <td><img src="{{pet.image}}" class="favethumbnail" alt="pet photo" /></td>
+  <td><p>{{pet.name}}</p>
+      <p>{{pet.description}}</p></td>
+  <!-- <td><input ng-click="deleteEmployee($index)" type="submit" value="Delete Employee"/></td> -->
+</tr>
+</table>
