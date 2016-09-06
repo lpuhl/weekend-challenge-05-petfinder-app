@@ -51,6 +51,7 @@ myApp.controller("homeController", ["$scope", "$http", function($scope, $http) {
       };
 
       console.log(petReq);
+
       $http({
           method: "POST",
           url: '/favesroute',
